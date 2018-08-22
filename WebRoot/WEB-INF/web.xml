@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>超市管理系统</display-name>
+  <filter>
+    <filter-name>filtercharset</filter-name>
+    <filter-class>com.supermarket.filter.charSetFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filtercharset</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>filterLogin</filter-name>
+    <filter-class> com.supermarket.filter.loginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>filterLogin</filter-name>
+    <url-pattern>/user/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>filterLogin</filter-name>
+    <url-pattern>/provider/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>filterLogin</filter-name>
+    <url-pattern>/bill/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <!-- 登录 -->
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.supermarket.servletcon.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 账单的增删查 -->
+   <servlet>
+    <servlet-name>GetBills</servlet-name>
+    <servlet-class>com.supermarket.servletcon.GetBillsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetBillServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.GetBillServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetIsPaymentServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.GetIsPaymentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetBillCode</servlet-name>
+    <servlet-class>com.supermarket.servletcon.GetBillCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>IsNumber</servlet-name>
+    <servlet-class>com.supermarket.servletcon.IsNumberServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddBillServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.AddBillServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteBillServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.DeleteBillServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+    <servlet-name>GetBills</servlet-name>
+    <url-pattern>/GetBills</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetBillServlet</servlet-name>
+    <url-pattern>/GetBillServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetIsPaymentServlet</servlet-name>
+    <url-pattern>/GetIsPaymentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetBillCode</servlet-name>
+    <url-pattern>/GetBillCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IsNumber</servlet-name>
+    <url-pattern>/IsNumber</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddBillServlet</servlet-name>
+    <url-pattern>/AddBillServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteBillServlet</servlet-name>
+    <url-pattern>/DeleteBillServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 账单修改 -->
+    <servlet>
+    <servlet-name>UpdateServilet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.UpdateServilet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateServilet</servlet-name>
+    <url-pattern>/UpdateServilet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 密码修改 -->
+<servlet>
+  <servlet-name>passServlet</servlet-name>
+  <servlet-class>com.supermarket.servletcon.passServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>passServlet</servlet-name>
+  <url-pattern>/passServlet</url-pattern>
+</servlet-mapping>
+  
+  
+<servlet>
+    <servlet-name>uppassServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.uppassServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>uppassServlet</servlet-name>
+    <url-pattern>/uppassServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>usServlet</servlet-name>
+   <servlet-class>com.supermarket.servletcon.usServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>usServlet</servlet-name>
+  <url-pattern>/usServlet</url-pattern>
+</servlet-mapping>   
+<!-- 用户信息修改 -->
+<servlet>
+    <servlet-name>Cidservlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.Cidservlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Cidservlet</servlet-name>
+    <url-pattern>/Cidservlet</url-pattern>
+</servlet-mapping>
+  
+<servlet>
+    <servlet-name>updateServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.updateServlet</servlet-class>
+</servlet>  
+<servlet-mapping>
+    <servlet-name>updateServlet</servlet-name>
+    <url-pattern>/updateServlet</url-pattern>
+</servlet-mapping> 
+  
+<!-- 用户主菜单显示及分页 -->
+  <servlet>
+    <servlet-name>userViewServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.userViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userViewServlet</servlet-name>
+    <url-pattern>/userViewServlet</url-pattern>
+  </servlet-mapping>
+ <!-- 用户添加 -->
+ 
+  <servlet>
+    <servlet-name>addCodeServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.addCodeServlet</servlet-class>
+  </servlet> 
+ <servlet-mapping>
+    <servlet-name>addCodeServlet</servlet-name>
+    <url-pattern>/addCodeServlet</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <servlet-name>userAddServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.userAddServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>userAddServlet</servlet-name>
+    <url-pattern>/userAddServlet</url-pattern>
+  </servlet-mapping>
+ 
+ <!-- 供应商管理 -->
+  <servlet>
+    <servlet-name>ProviderServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.ProviderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetProviderServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.GetProviderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProviderAddServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.ProviderAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProviderUpdateServlet</servlet-name>
+    <servlet-class>com.supermarket.servletcon.ProviderUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+   <servlet-name>ProviderDeleteServlet</servlet-name>
+   <servlet-class>com.supermarket.servletcon.ProviderDeleteServlet</servlet-class>
+  </servlet>
+  
+  
+
+  <servlet-mapping>
+    <servlet-name>ProviderServlet</servlet-name>
+    <url-pattern>/providerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetProviderServlet</servlet-name>
+    <url-pattern>/GetProviderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProviderAddServlet</servlet-name>
+    <url-pattern>/ProviderAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProviderUpdateServlet</servlet-name>
+    <url-pattern>/providerUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProviderDeleteServlet</servlet-name>
+  	<url-pattern>/providerDeleteServlet</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error.jsp</location>
+  </error-page>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
