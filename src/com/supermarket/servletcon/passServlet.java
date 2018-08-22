@@ -1,16 +1,15 @@
 ﻿package com.supermarket.servletcon;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class passServlet extends HttpServlet {
 
-
+private String a;
 	//修改密码   新用户名密码ajax验证
 	public void destroy() {
 		super.destroy(); 
@@ -32,15 +31,6 @@ public class passServlet extends HttpServlet {
 			out.print("0");
 			
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
